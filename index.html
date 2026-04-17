@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title data-i18n="meta.title">Minh Phuong — Portfolio</title>
+  <meta name="description" data-i18n="meta.description"
+    content="Portfolio cá nhân của Minh Phuong — Lập trình viên Full-Stack" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <script>
+    (function () {
+      const saved = localStorage.getItem('portfolio-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+
+<body>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <nav id="navbar" class="navbar glass" role="navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span><span class="logo-name">Minh-Phuong</span><span
+          class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">Giới Thiệu</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Kỹ Năng</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Dự Án</a></li>
+        <li><a href="#timeline" class="nav-link" data-i18n="nav.timeline">Lộ Trình</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Liên Hệ</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="lang-toggle" class="ctrl-btn" title="VI / EN">
+          <span class="lang-flag">🇺🇸</span><span class="lang-label">EN</span>
+        </button>
+        <button id="theme-toggle" class="ctrl-btn"><i class="fa-solid fa-moon" id="theme-icon"></i></button>
+        <button id="hamburger" class="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu">
+      <ul>
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">Giới Thiệu</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Kỹ Năng</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Dự Án</a></li>
+        <li><a href="#timeline" class="nav-link" data-i18n="nav.timeline">Lộ Trình</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Liên Hệ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="hero" class="section hero-section">
+    <div class="hero-content">
+      <p class="hero-greeting" data-i18n="hero.greeting">Xin chào, tôi là</p>
+      <h1 class="hero-name">Minh Phuong</h1>
+      <div class="hero-role">
+        <span data-i18n="hero.rolePrefix">Tôi là một </span>
+        <span id="typewriter" class="typewriter"></span><span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-bio" data-i18n="hero.bio">Đam mê xây dựng các ứng dụng web hiện đại với trải nghiệm người dùng xuất
+        sắc.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero.cta.work">Xem Dự Án</a>
+        <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta.contact">Liên Hệ</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/mingfang914" class="social-icon"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mingfang914" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:phuongvnmp@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-wrapper">
+        <img src="assets/images/avatar-mp.png" alt="Avatar" class="avatar-img" />
+        <div class="avatar-ring ring-1"></div>
+        <div class="avatar-ring ring-2"></div>
+        <div class="avatar-glow"></div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div><span data-i18n="hero.scroll">Cuộn xuống</span>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="about.tag">// về tôi</span>
+        <h2 class="section-title" data-i18n="about.title">Về Tôi</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p data-i18n="about.para1" style="margin-bottom:1rem">Tôi là lập trình viên Full-Stack với hơn 3 năm kinh
+            nghiệm...</p>
+          <p data-i18n="about.para2">Tôi đam mê thiết kế UI/UX và xây dựng các hệ thống hiệu suất cao...</p>
+          <div class="about-stats">
+            <div class="stat-item glass"><span class="stat-number counter" data-target="10">0</span><span
+                class="stat-label" data-i18n="about.stat.projects">Dự Án</span></div>
+            <div class="stat-item glass"><span class="stat-number counter" data-target="1">0</span><span
+                class="stat-label" data-i18n="about.stat.years">Năm KN</span></div>
+            <div class="stat-item glass"><span class="stat-number counter" data-target="5">0</span><span
+                class="stat-label" data-i18n="about.stat.clients">Khách Hàng</span></div>
+          </div>
+          <a href="#" class="btn btn-outline" data-i18n="about.download"><i class="fa-solid fa-download"></i> Tải CV</a>
+        </div>
+        <div class="about-image reveal">
+          <div class="image-card glass"><img src="assets/images/about-photo.png" alt="About" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="skills.tag">// công nghệ</span>
+        <h2 class="section-title" data-i18n="skills.title">Kỹ Năng</h2>
+      </div>
+      <div class="skills-categories reveal">
+        <div class="tab-group">
+          <button class="tab active" data-tab="frontend" data-i18n="skills.tab.frontend">Frontend</button>
+          <button class="tab" data-tab="backend" data-i18n="skills.tab.backend">Backend</button>
+          <button class="tab" data-tab="devops" data-i18n="skills.tab.devops">DevOps</button>
+          <button class="tab" data-tab="tools" data-i18n="skills.tab.tools">Tools</button>
+        </div>
+        <div id="skills-grid" class="skills-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="projects.tag">// công việc của tôi</span>
+        <h2 class="section-title" data-i18n="projects.title">Dự Án</h2>
+      </div>
+      <div class="project-filters reveal">
+        <button class="filter-btn active" data-filter="all" data-i18n="projects.filter.all">Tất Cả</button>
+        <button class="filter-btn" data-filter="web" data-i18n="projects.filter.web">Web App</button>
+        <button class="filter-btn" data-filter="mobile" data-i18n="projects.filter.mobile">Mobile</button>
+      </div>
+      <div id="projects-grid" class="projects-grid"></div>
+    </div>
+  </section>
+
+  <section id="timeline" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="timeline.tag">// lộ trình</span>
+        <h2 class="section-title" data-i18n="timeline.title">Lộ Trình</h2>
+      </div>
+      <div class="timeline" id="timeline-list"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="contact.tag">// liên hệ</span>
+        <h2 class="section-title" data-i18n="contact.title">Liên Hệ</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info glass reveal">
+          <div class="contact-item"><i class="fa-solid fa-envelope"></i><a
+              href="mailto:phuongvnmp@gmail.com">phuongvnmp@gmail.com</a></div>
+          <div class="contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+84918011914">+84 918 011 914</a>
+          </div>
+          <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span data-i18n="contact.location">TP Hồ Chí
+              Minh, Việt Nam</span></div>
+        </div>
+        <form id="contact-form" class="contact-form glass reveal">
+          <div class="form-group"><label for="contact-name" data-i18n="contact.form.name">Họ và Tên</label><input
+              type="text" id="contact-name" /></div>
+          <div class="form-group"><label for="contact-email" data-i18n="contact.form.email">Email</label><input
+              type="email" id="contact-email" /></div>
+          <div class="form-group"><label for="contact-message" data-i18n="contact.form.message">Tin
+              Nhắn</label><textarea id="contact-message" rows="5"></textarea></div>
+          <button type="submit" class="btn btn-primary" id="form-submit"><span data-i18n="contact.form.send">Gửi Tin
+              Nhắn</span> <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p class="footer-copy">&copy; <span id="footer-year"></span> <span data-i18n="footer.made">Made with</span> <i
+          class="fa-solid fa-heart" style="color:var(--accent-primary)"></i> <span data-i18n="footer.by">by</span>
+        <strong>Minh Phuong</strong>
+      </p>
+      <div class="footer-links"><a href="#hero" data-i18n="nav.top">Lên Đầu Trang</a><a
+          href="https://github.com/mingfang914">GitHub</a></div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <button id="back-to-top" class="back-to-top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/theme.js" defer></script>
+  <script src="assets/js/particles.js" defer></script>
+  <script src="assets/js/typewriter.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

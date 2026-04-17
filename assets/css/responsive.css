@@ -1,0 +1,266 @@
+/* ============================
+   RESPONSIVE DESIGN SYSTEM
+   ============================ */
+
+/* ── TABLETS & BELOW (max 1023px) ── */
+@media (max-width: 1023px) {
+  .hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: calc(var(--navbar-height) + var(--space-12));
+  }
+
+  .hero-visual {
+    flex: none;
+  }
+
+  .hero-bio {
+    margin: 0 auto var(--space-8);
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .hero-socials {
+    justify-content: center;
+  }
+
+  .avatar-wrapper {
+    width: 240px;
+    height: 240px;
+  }
+
+  .avatar-img {
+    width: 200px;
+    height: 200px;
+    margin-top: 15px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline::before {
+    left: 1.5rem;
+  }
+
+  .timeline-item {
+    padding-right: 0;
+    padding-left: 4rem;
+    justify-content: flex-start;
+  }
+
+  .timeline-item:nth-child(even) {
+    padding-left: 4rem;
+  }
+
+  .timeline-dot {
+    left: 1.5rem;
+    transform: translateX(-50%);
+  }
+}
+
+/* ── MOBILE (max 767px) ── */
+@media (max-width: 767px) {
+  :root {
+    --section-padding: var(--space-16) var(--space-4);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .mobile-menu .nav-link {
+    display: block;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .avatar-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .avatar-img {
+    width: 170px;
+    height: 170px;
+    margin-top: 12px;
+  }
+
+  .hero-name {
+    font-size: clamp(var(--text-3xl), 10vw, var(--text-5xl));
+  }
+
+  .about-stats {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .stat-item {
+    flex: 1 1 calc(50% - var(--space-3));
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: var(--space-3);
+  }
+
+  .timeline::before {
+    left: 1rem;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    padding-left: 3rem;
+    padding-right: 0;
+  }
+
+  .timeline-dot {
+    left: 1rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: var(--space-8);
+  }
+
+  .toast {
+    right: var(--space-4);
+    left: var(--space-4);
+    bottom: var(--space-4);
+    max-width: none;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ── SMALL PHONES (max 479px) ── */
+@media (max-width: 479px) {
+  .section-title {
+    font-size: var(--text-3xl);
+  }
+
+  .tab-group,
+  .project-filters {
+    gap: var(--space-1);
+  }
+
+  .tab,
+  .filter-btn {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+  }
+
+  .nav-controls .lang-label {
+    display: none;
+  }
+}
+
+/* ── WIDE DESKTOPS (min 1400px) ── */
+@media (min-width: 1400px) {
+  :root {
+    --container-max: 1320px;
+  }
+
+  .hero-name {
+    font-size: var(--text-6xl);
+  }
+
+  .avatar-wrapper {
+    width: 360px;
+    height: 360px;
+  }
+
+  .avatar-img {
+    width: 300px;
+    height: 300px;
+    margin-top: 25px;
+  }
+}
+
+/* ── HIGH CONTRAST MODE ── */
+@media (forced-colors: active) {
+  .glass {
+    border: 2px solid ButtonText;
+    background: Canvas;
+  }
+
+  .btn-primary {
+    background: ButtonFace;
+    color: ButtonText;
+    border: 2px solid ButtonText;
+  }
+}
+
+/* ── PRINT ── */
+@media print {
+
+  #particles-canvas,
+  .navbar,
+  .back-to-top,
+  .hero-socials,
+  .hero-cta,
+  #contact-form,
+  .project-filters {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+  }
+
+  .glass {
+    background: none;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #555;
+  }
+}
